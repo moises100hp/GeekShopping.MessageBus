@@ -2,7 +2,7 @@ name: Publish MessageBus NuGet
 
 on:
   push:
-    branches: [ main ] # Dispara quando você sobe código para a main
+    branches: [ master ] # Dispara quando você sobe código para a master
 
 permissions:
   contents: read
