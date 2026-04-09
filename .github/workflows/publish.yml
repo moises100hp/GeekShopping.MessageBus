@@ -1,0 +1,25 @@
+name: Publish MessageBus NuGet
+
+on:
+  push:
+    branches: [ main ] # Dispara quando você sobe código para a main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+          source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pack
+        run: dotnet pack -c Release -o out
+
+      - name: Push to GitHub Packages
+        run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
