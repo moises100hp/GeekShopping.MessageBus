@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ] # Dispara quando você sobe código para a main
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
