@@ -28,7 +28,7 @@ jobs:
       - name: Test
         run: |
           cd GeekShopping.MessageBus.Test
-          dotnet test --configuration Release --no-build --verbosity normal
+          dotnet test --configuration Release --no-restore --no-build --nologo
 
       - name: Pack
         run: dotnet pack -c Release -o out
