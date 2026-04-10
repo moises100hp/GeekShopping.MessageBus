@@ -23,11 +23,11 @@ jobs:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
-        run: dotnet build **/GeekShopping.MessageBus.csproj --configuration Release
+        run: dotnet build src/GeekShopping.MessageBus.csproj --configuration Release
 
       - name: Test
-        run: dotnet test **/GeekShopping.MessageBus.Test.csproj --configuration Release --no-build --nologo
-
+        run: dotnet test tests/GeekShopping.MessageBus.Test.csproj --configuration Release --no-build --nologo
+        
       - name: Pack
         run: dotnet pack -c Release -o out
         
