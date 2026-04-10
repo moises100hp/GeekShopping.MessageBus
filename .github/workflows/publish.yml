@@ -25,7 +25,7 @@ jobs:
         run: dotnet build src/GeekShopping.MessageBus/GeekShopping.MessageBus.csproj --configuration Release
 
       - name: Test
-        run: dotnet vstest tests/GeekShopping.MessageBus.Test/bin/Release/net8.0/GeekShopping.MessageBus.Test.dll --Platform:x64
+        run: dotnet test tests/GeekShopping.MessageBus.Test/bin/Release/net8.0/GeekShopping.MessageBus.Test.dll --Platform:x64
 
       - name: Pack
         run: dotnet pack -c Release -o out
