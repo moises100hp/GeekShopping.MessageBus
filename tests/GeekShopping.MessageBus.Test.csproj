@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GeekShopping.MessageBus.csproj" />
+    <ProjectReference Include="..\src\GeekShopping.MessageBus.csproj" />
   </ItemGroup>
 
   <ItemGroup>
