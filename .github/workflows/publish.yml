@@ -26,9 +26,13 @@ jobs:
 
       - name: Test
         run: |
-          cp -r tests/GeekShopping.MessageBus.Test /home/runner/t
-          cd /home/runner/t
-          dotnet test --configuration Release --no-build --nologo
+          dotnet test tests/GeekShopping.MessageBus.Test/GeekShopping.MessageBus.Test.csproj \
+          --configuration Release \
+          --no-build \
+          --nologo \
+          --filter "FullyQualifiedName~GeekShopping" \
+          -- \
+          RunConfiguration.TargetPlatform=x64
 
       - name: Pack
         run: dotnet pack -c Release -o out
