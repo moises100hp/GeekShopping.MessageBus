@@ -23,7 +23,7 @@ jobs:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Test
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test GeekShopping.MessageBus.Test/GeekShopping.MessageBus.Test.csproj --configuration Release --verbosity normal
 
       - name: Pack
         run: dotnet pack -c Release -o out
