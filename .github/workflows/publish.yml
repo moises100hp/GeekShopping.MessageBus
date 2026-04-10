@@ -26,7 +26,7 @@ jobs:
         run: dotnet build **/GeekShopping.MessageBus.csproj --configuration Release
 
       - name: Test
-        run: dotnet test **/GeekShopping.MessageBus.Test.csproj --configuration Release --no-build
+  run: dotnet test tests/GeekShopping.MessageBus.Test/GeekShopping.MessageBus.Test.csproj --configuration Release --no-build --nologo --verbosity normal
 
       - name: Pack
         run: dotnet pack -c Release -o out
