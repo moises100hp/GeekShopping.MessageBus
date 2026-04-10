@@ -10,10 +10,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Remove=".github\**" />
 		<Compile Remove="GeekShopping.MessageBus.Test\**" />
+		<EmbeddedResource Remove=".github\**" />
 		<EmbeddedResource Remove="GeekShopping.MessageBus.Test\**" />
+		<None Remove=".github\**" />
 		<None Remove="GeekShopping.MessageBus.Test\**" />
-		<None Include=".github\workflows\publish.yml" />
 	</ItemGroup>
 
 </Project>
