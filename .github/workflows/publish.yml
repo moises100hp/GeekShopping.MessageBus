@@ -26,8 +26,12 @@ jobs:
 
       - name: Test
         run: |
-          cd tests/GeekShopping.MessageBus.Test
-          dotnet test --configuration Release --no-build --nologo --verbosity normal
+          dotnet test tests/GeekShopping.MessageBus.Test/GeekShopping.MessageBus.Test.csproj \
+          --configuration Release \
+          --no-build \
+          --nologo \
+          -v m \
+          --filter "FullyQualifiedName~GeekShopping"
 
       - name: Pack
         run: dotnet pack -c Release -o out
