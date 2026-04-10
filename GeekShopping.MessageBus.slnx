@@ -1,4 +1,8 @@
 <Solution>
-  <Project Path="GeekShopping.MessageBus.csproj" />
-  <Project Path="GeekShopping.MessageBus.Test/GeekShopping.MessageBus.Test.csproj" />
+  <Folder Name="/src/">
+    <Project Path="GeekShopping.MessageBus.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="GeekShopping.MessageBus.Test/GeekShopping.MessageBus.Test.csproj" />
+  </Folder>
 </Solution>
